@@ -3,6 +3,7 @@
 #Purpose: Automated script to create a Postgres Database pipeline?
 
 #read -p "Please Enter the Role Name:" ROLE_NAME
+sudo su - postgres
 echo " "
         if [ "$( psql -tAc "SELECT 1 FROM pg_roles WHERE rolname='$ROLE_NAME'" )" = '1' ]
         then
