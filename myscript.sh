@@ -1,4 +1,4 @@
 #!/bin/bash
-echo "First arg: $1"
-echo "Second arg: $2"
+echo "First arg: $test-1"
+echo "Second arg: $test-2"
 
