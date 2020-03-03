@@ -3,7 +3,7 @@
 #Purpose: Automated script to create a Postgres Database pipeline?
 
 #read -p "Please Enter the Role Name:" ROLE_NAME
-sudo su - postgres
+/usr/bin/psql --username postgres 
 echo " "
         if [ "$( psql -tAc "SELECT 1 FROM pg_roles WHERE rolname='$ROLE_NAME'" )" = '1' ]
         then
@@ -59,10 +59,10 @@ N|n|NO|no|No)
         ;;
 esac
         /usr/bin/psql<<EOF
-        CREATE ROLE "$ROLE_NAME" WITH LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE INHERIT NOREPLICATION CONNECTION LIMIT -1;
-        CREATE DATABASE "$DATABASE_NAME" WITH OWNER = $OWNER_NAME ENCODING = 'UTF8' CONNECTION LIMIT = -1;
-        GRANT ALL ON DATABASE "$DATABASE_NAME" TO "$DATABASE_NAME";
-        ALTER ROLE "$ROLE_NAME" PASSWORD '$PASSWORD';
+#        CREATE ROLE "$ROLE_NAME" WITH LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE INHERIT NOREPLICATION CONNECTION LIMIT -1;
+#        CREATE DATABASE "$DATABASE_NAME" WITH OWNER = $OWNER_NAME ENCODING = 'UTF8' CONNECTION LIMIT = -1;
+#        GRANT ALL ON DATABASE "$DATABASE_NAME" TO "$DATABASE_NAME";
+#        ALTER ROLE "$ROLE_NAME" PASSWORD '$PASSWORD';
         \l
 EOF
 
