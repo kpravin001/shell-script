@@ -4,7 +4,7 @@
 
 #read -p "Please Enter the Role Name:" ROLE_NAME
 #/usr/bin/psql --username postgres 
-sudo su - postgres
+sudo -S postgres
 echo " "
         if [ "$( psql -tAc "SELECT 1 FROM pg_roles WHERE rolname='$ROLE_NAME'" )" = '1' ]
         then
